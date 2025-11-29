@@ -23,8 +23,18 @@ const Modal = ({ handleClose, handleOfferAccept }: Olli) => {
         return () => document.removeEventListener('keydown', handleEsc);
     }, [])  
     return (
-        <div className='modal' onClick={handleOutsideClick}>
-            <div className='modal-content'>
+        // <div className='modal' onClick={handleOutsideClick}>
+        <div className='modal' onClick={handleClose}>
+            <div className='modal-content' onClick={(e) => e.stopPropagation()}>
+                {/* humne div -> 'modal' pr handleClose laga diya
+                    and 'modal-content' pr e.stopPropagation()
+                    laga diya taaki jo click event hai wo upar tak
+                    jaaye hi na kyuki jese hi hum modal
+                    ke andar click krege event stop ho jaega modal
+                    ka onClick chlega hi nh but modal-content ke bahar click krege
+                    to band ho jaega because 'handleClose' modal pr hi laga 
+                    diya hai
+                */}
                 <button className='close-btn' onClick={handleClose}>X</button>
 
                 <div className='content'>
