@@ -1,0 +1,24 @@
+.modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.open-btn {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.8s ease-out;
+    background-color: yellowgreen;
+}
+
+.open-btn:active {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.modal-overlay {
+    height: 100vh;
+}
