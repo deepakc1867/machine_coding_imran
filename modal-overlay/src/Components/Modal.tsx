@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface Olli {
     handleClose: () => void;
@@ -12,6 +12,16 @@ const Modal = ({ handleClose, handleOfferAccept }: Olli) => {
             handleClose();
         }
     }
+
+    useEffect(() => {
+        const handleEsc = (e: KeyboardEvent) => {
+            if(e.key === 'Escape') handleClose();
+        }
+
+        document.addEventListener('keydown', handleEsc)
+
+        return () => document.removeEventListener('keydown', handleEsc);
+    }, [])  
     return (
         <div className='modal' onClick={handleOutsideClick}>
             <div className='modal-content'>
