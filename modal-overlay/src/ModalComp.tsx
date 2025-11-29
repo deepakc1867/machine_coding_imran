@@ -8,10 +8,6 @@ const ModalComp = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [isOfferAccepted, setIsOfferAccepted] = useState(false);
 
-    useEffect(() => {
-
-    }, [open]);
-
     return (
         <>
             <div className='modal-overlay'>
