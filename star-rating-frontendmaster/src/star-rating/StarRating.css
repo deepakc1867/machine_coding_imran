@@ -1,0 +1,22 @@
+.star-rating button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.star-rating .active svg {
+    fill: yellow;
+}
+
+.star-rating .hovered svg {
+    stroke: blue;
+    fill: green;
+}
+
+.star-rating .hovered.active svg {
+    stroke: purple;
+    color: green;
+    fill: yellow;
+}
